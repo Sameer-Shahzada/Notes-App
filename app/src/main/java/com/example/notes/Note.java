@@ -1,6 +1,6 @@
 package com.example.notes;
 
 public class Note {
-    // code here 
+    // Note class code here
 
 }
