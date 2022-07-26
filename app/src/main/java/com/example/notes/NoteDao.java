@@ -1,5 +1,6 @@
 package com.example.notes;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -20,7 +21,7 @@ public interface NoteDao {
     void delete(Note note);     // to delete note
 
     @Query("Select * from notes_table order by id ASC")
-    List<Note> getAllNotes();       // to get all notes.
+    LiveData<List<Note>> getAllNotes();       // to get all notes.
 
 
 }
