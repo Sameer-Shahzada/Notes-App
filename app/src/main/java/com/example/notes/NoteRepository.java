@@ -8,7 +8,7 @@ import java.util.List;
 
 public class NoteRepository {
     private NoteDao noteDao;    // mWordDao
-    private LiveData<List<Note>> mAllNotes;
+    private LiveData<List<Note>> mAllNotes; // mAllWords;
 
     // Note that in order to unit test the WordRepository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
@@ -17,12 +17,12 @@ public class NoteRepository {
     NoteRepository(Application application) {
         NoteRoomDatabase db = NoteRoomDatabase.getDatabase(application);
         noteDao = db.noteDao();
-        mAllNotes = noteDao.getAllNotes();
+        mAllNotes = noteDao.getAllNotes();  //getAlphabetizedWords
     }
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    LiveData<List<Note>> getAllWords() {
+    LiveData<List<Note>> getAllNotesM() {
         return mAllNotes;
     }
 

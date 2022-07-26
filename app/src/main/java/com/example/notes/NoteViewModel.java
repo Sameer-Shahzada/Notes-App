@@ -16,10 +16,10 @@ public class NoteViewModel extends AndroidViewModel {
         public NoteViewModel (Application application) {
             super(application);
             mRepository = new NoteRepository(application);
-            mAllNotes = mRepository.getAllWords();
+            mAllNotes = mRepository.getAllNotesM();
         }
 
-        LiveData<List<Note>> getAllWords() { return mAllNotes; }
+        LiveData<List<Note>> getAllNotesM() { return mAllNotes; }
 
         public void insert(Note note) { mRepository.insert(note); }
 }
