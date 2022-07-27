@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
-        style="@style/note_title"
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:text="Shahzada"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:layout_weight="3"
+        android:textColor="@color/maroom"
         android:background="@android:color/holo_orange_light" />
+
+    <ImageView
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_weight="1"
+        android:background="@android:color/holo_orange_dark"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="1dp"
+
+        />
 </LinearLayout>
