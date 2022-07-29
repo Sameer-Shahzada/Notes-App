@@ -20,20 +20,20 @@ public class NoteListAdapter extends ListAdapter<Note, NoteViewHolder> {
     @Override
     public void onBindViewHolder(NoteViewHolder holder, int position) {
         Note current = getItem(position);
-        holder.bind(current.getNote());
+//        holder.bind(current.getNote());
     }
 
-    static class NoteDiff extends DiffUtil.ItemCallback<Note> {
+//    static class NoteDiff extends DiffUtil.ItemCallback<Note> {
+//
+//        @Override
+//        public boolean areItemsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+//            return oldItem == newItem;
+//        }
 
-        @Override
-        public boolean areItemsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
-            return oldItem == newItem;
-        }
-
-        @Override
-        public boolean areContentsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
-            return oldItem.getNote().equals(newItem.getNote());
-        }
+//        @Override
+//        public boolean areContentsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+////            return oldItem.getNote().equals(newItem.getNote());
+//        }
 
     }
-}
+//}

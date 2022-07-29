@@ -10,12 +10,13 @@
         android:id="@+id/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter note here"
+        android:hint="@string/enter_note_here"
         android:layout_margin="16dp"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+         />
 
     <Button
         android:id="@+id/submitButton"
@@ -23,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_margin="16dp"
         android:textSize="16sp"
-        android:text="Submit"
+        android:text="@string/submit"
         android:background="@color/design_default_color_primary_dark"
         app:layout_constraintTop_toBottomOf="@id/input"
         android:textColor="@color/white"

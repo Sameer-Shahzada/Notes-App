@@ -16,4 +16,6 @@ public class Note {
     public String text;
 
 
+    public Note(String hello) {
+    }
 }

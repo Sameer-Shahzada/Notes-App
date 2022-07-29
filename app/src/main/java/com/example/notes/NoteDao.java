@@ -18,7 +18,9 @@ public interface NoteDao {
     void insert(Note note);     // to insert note
 
     @Delete
-    void delete(Note note);     // to delete note
+    void deleteAll();
+
+//    void delete(Note note);     // to delete note
 
     @Query("Select * from notes_table order by id ASC")
     LiveData<List<Note>> getAllNotes();       // to get all notes.  // getAlphabetizedWords()

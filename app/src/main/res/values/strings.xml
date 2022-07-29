@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Notes</string>
     <string name="flaotingbutton">flaotingButton</string>
+    <string name="setimage">setImage</string>
+    <string name="enter_note_here">Enter note here</string>
+    <string name="submit">Submit</string>
 </resources>

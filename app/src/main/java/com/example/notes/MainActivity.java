@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final NoteListAdapter adapter = new NoteListAdapter(new NoteListAdapter.NoteDiff());
-        recyclerView.setAdapter(adapter);
+//        final NoteListAdapter adapter = new NoteListAdapter(new NoteListAdapter.NoteDiff());
+//        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

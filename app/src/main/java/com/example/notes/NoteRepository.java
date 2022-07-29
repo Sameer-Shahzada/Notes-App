@@ -10,7 +10,7 @@ public class NoteRepository {
     private NoteDao noteDao;    // mWordDao
     private LiveData<List<Note>> mAllNotes; // mAllWords;
 
-    // Note that in order to unit test the WordRepository, you have to remove the Application
+    // Note that in order to unit test the NoteRepository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
     // See the BasicSample in the android-architecture-components repository at
     // https://github.com/googlesamples

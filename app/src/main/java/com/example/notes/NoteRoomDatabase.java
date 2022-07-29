@@ -2,9 +2,11 @@ package com.example.notes;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -26,11 +28,33 @@ import java.util.concurrent.Executors;
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                 NoteRoomDatabase.class, "note_database")
+                                .addCallback(sRoomDatabaseCallback)
                                 .build();
                     }
                 }
             }
             return INSTANCE;
         }
+
+    private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+
+            // If you want to keep data through app restarts,
+            // comment out the following block
+            databaseWriteExecutor.execute(() -> {
+                // Populate the database in the background.
+                // If you want to start with more words, just add them.
+                NoteDao dao = INSTANCE.noteDao();
+                dao.deleteAll();
+
+                Note note = new Note("Hello");
+                dao.insert(note);
+                note = new Note("World");
+                dao.insert(note);
+            });
+        }
+    };
     }
 
