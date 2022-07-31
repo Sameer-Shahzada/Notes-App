@@ -20,7 +20,7 @@ public class NewNoteActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_note);
         mEditNoteView = findViewById(R.id.input);
 
         final Button button = findViewById(R.id.submitButton);
