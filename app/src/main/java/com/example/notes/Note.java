@@ -1,5 +1,6 @@
 package com.example.notes;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -12,10 +13,16 @@ public class Note {
     @PrimaryKey(autoGenerate = true)
     int id = 0;
 
-    @ColumnInfo(name = "text")
-    public String text;
+    @ColumnInfo(name = "note")
+    private String mNote;
 
 
-    public Note(String hello) {
+    public Note(@NonNull String note) {
+        this.mNote = note;
     }
+    @NonNull
+    public String getNote() {
+        return this.mNote;
+    }
+
 }

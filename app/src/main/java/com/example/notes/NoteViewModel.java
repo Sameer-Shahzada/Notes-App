@@ -7,6 +7,12 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+/**
+ * View Model to keep a reference to the word repository and
+ * an up-to-date list of all words.
+ */
+
+
 public class NoteViewModel extends AndroidViewModel {
 
         private NoteRepository mRepository;
@@ -21,6 +27,9 @@ public class NoteViewModel extends AndroidViewModel {
 
         LiveData<List<Note>> getAllNotesM() { return mAllNotes; }
 
-        public void insert(Note note) { mRepository.insert(note); }
+        public void insert(Note note)
+        {
+            mRepository.insert(note);
+        }
 }
 

@@ -4,4 +4,5 @@
     <string name="setimage">setImage</string>
     <string name="enter_note_here">Enter note here</string>
     <string name="submit">Submit</string>
+    <string name="empty_not_saved">Note not saved because it is empty.</string>
 </resources>

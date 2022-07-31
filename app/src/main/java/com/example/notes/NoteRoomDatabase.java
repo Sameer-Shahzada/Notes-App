@@ -17,6 +17,7 @@ import java.util.concurrent.Executors;
 
         public abstract NoteDao noteDao();
 
+    // marking the instance as volatile to ensure atomic access to the variable
         private static volatile NoteRoomDatabase INSTANCE;
         private static final int NUMBER_OF_THREADS = 4;
         static final ExecutorService databaseWriteExecutor =
@@ -35,6 +36,11 @@ import java.util.concurrent.Executors;
             }
             return INSTANCE;
         }
+
+    /**
+     * Override the onCreate method to populate the database.
+     * For this sample, we clear the database every time it is created.
+     */
 
     private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
